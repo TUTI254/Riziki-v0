@@ -1,0 +1,374 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<!-- deals of the week -->
+
+<div class="newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div
+                    class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
+                    <h2 class="text-white">Deals of the week</h2>
+                    <p>Subscribe to our newsletter and get notified on any Discounts and News</p>
+                </div>
+            </div>
+            <div class="col-lg-9 mb-5 mt-5">
+                <div class="product_slider_container mb-3"
+                    style="background-color: white !important; padding: 5px; border-radius: 15px;">
+                    <div class="owl-carousel owl-theme product_slider">
+                        {% for product in products %}
+                            <!-- Slide 1 -->
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item">
+                                    <div class="product discount">
+                                        <div class="product_image">
+                                            <img src="{{product.imageURL}}" alt="">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>Sale</span>
+                                        </div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="">{{product.name}}</a></h6>
+                                            <div class="product_price">Ksh {{product.price|floatformat:2}}<!--- <span>$590.00</span> ---></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Slider Navigation -->
+
+                    <div
+                        class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div
+                        class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- features list section -->
+<div class="list-section pt-80 pb-80">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 mt-3 mb-lg-0">
+                <div class="list-box d-flex align-items-center">
+                    <div class="list-icon">
+                        <i class="fa fa-truck"></i>
+                    </div>
+                    <div class="content">
+                        <h3>Free Shipping</h3>
+                        <p>When order over $75</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mt-3 mb-lg-0">
+                <div class="list-box d-flex align-items-center">
+                    <div class="list-icon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="content">
+                        <h3>24/7 Support</h3>
+                        <p>Get support all day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mt-3">
+                <div class="list-box d-flex justify-content-start align-items-center">
+                    <div class="list-icon">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <div class="content">
+                        <h3>Refund</h3>
+                        <p>Get refund within 3 days!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Flash sales -->
+<div class="best_sellers">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title new_arrivals_title">
+                    <h2>Flash Sale</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="product_slider_container"style="background-color: white !important; padding: 5px; border-radius: 15px;">
+                    <div class="owl-carousel owl-theme product_slider">
+
+                        {% for product in products %}                        
+                            <!-- Slide 1 -->
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item">
+                                    <div class="product discount">
+                                        <div class="product_image">
+                                            <img src="{{product.imageURL}}" alt="">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <!-- <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>-$20</span>
+                                        </div> -->
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="">{{product.name}}</a></h6>
+                                            <div class="product_price">Ksh {{product.price|floatformat:2}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+
+                    <!-- Slider Navigation -->
+
+                    <div
+                        class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div
+                        class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Arrivals -->
+
+<div class="new_arrivals">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title new_arrivals_title">
+                    <h2>New Arrivals</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col text-center">
+                <div class="new_arrivals_sorting">
+                    <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked"
+                            data-filter="*">all</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center"
+                            data-filter=".women">cereals</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center"
+                            data-filter=".accessories">legumes</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center"
+                            data-filter=".men">flour</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="product-grid" style="background-color: white !important;border-radius: 15px;" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+                    {% for product in products %}
+                        <!-- Product 1 -->
+                        <div class="product-item men">
+                            <div class="product discount product_filter">
+                                <div class="product_image">
+                                    <img src="{{product.imageURL}}" alt="">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div
+                                    class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center">
+                                    <span>new</span>
+                                </div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="">{{product.name}}</a></h6>
+                                    <div class="product_price">Ksh {{product.price|floatformat:2}}</div>
+                                </div>
+                            </div>
+                            <div data-product={{product.id}} data-action="add" class="red_button add_to_cart_button update-cart"><a href="#">add to order</a></div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- categories -->
+<div class="benefit">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title new_arrivals_title">
+                    <h2>Select By Pet</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="product_slider_container">
+                    <div class="owl-carousel owl-theme product_slider">
+                        <div class="owl-item product_slider_item ml-3">
+                            <img src="{% static 'images/motifyellow.jpeg'%}" alt="Dog" style="width:120px; height: 120px; border-radius: 50%;">
+                        </div>
+                        <div class="owl-item product_slider_item">
+                            <img src="{% static 'images/motifyellow.jpeg'%}" alt="Dog" style="width:120px; height: 120px; border-radius: 50%;">
+                        </div>
+                        <div class="owl-item product_slider_item">
+                            <img src="{% static 'images/motifyellow.jpeg'%}" alt="Dog" style="width:120px; height: 120px; border-radius: 50%;">
+                        </div>
+                        <div class="owl-item product_slider_item">
+                            <img src="{% static 'images/motifyellow.jpeg'%}" alt="Dog" style="width:120px; height: 120px; border-radius: 50%;">
+                        </div>
+                        <div class="owl-item product_slider_item">
+                            <img src="{% static 'images/motifyellow.jpeg'%}" alt="Dog" style="width:120px; height: 120px; border-radius: 50%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div
+                        class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Flash sales -->
+<div class="best_sellers">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title new_arrivals_title">
+                    <h2>Flash Sale</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="product_slider_container"style="background-color: white !important; padding: 5px; border-radius: 15px;">
+                    <div class="owl-carousel owl-theme product_slider">
+
+                        {% for product in products %}                        
+                            <!-- Slide 1 -->
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item">
+                                    <div class="product discount">
+                                        <div class="product_image">
+                                            <img src="{{product.imageURL}}" alt="">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <!-- <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>-$20</span>
+                                        </div> -->
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="">{{product.name}}</a></h6>
+                                            <div class="product_price">Ksh {{product.price|floatformat:2}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+
+                    <!-- Slider Navigation -->
+
+                    <div
+                        class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div
+                        class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Flash sales -->
+<div class="best_sellers">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title new_arrivals_title">
+                    <h2>Flash Sale</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="product_slider_container"style="background-color: white !important; padding: 5px; border-radius: 15px;">
+                    <div class="owl-carousel owl-theme product_slider">
+
+                        {% for product in products %}                        
+                            <!-- Slide 1 -->
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item">
+                                    <div class="product discount">
+                                        <div class="product_image">
+                                            <img src="{{product.imageURL}}" alt="">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <!-- <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>-$20</span>
+                                        </div> -->
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="">{{product.name}}</a></h6>
+                                            <div class="product_price">Ksh {{product.price|floatformat:2}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+
+                    <!-- Slider Navigation -->
+
+                    <div
+                        class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div
+                        class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
